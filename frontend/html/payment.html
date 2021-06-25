@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+
+     <title>Payment</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	 <link rel="icon" type="image/png" href="/images/logo.png"/>
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animate.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="css/magnific-popup.css">
+     
+
+
+     <!-- MAIN CSS -->
+      <link rel="stylesheet" href="css/p1.css"> 
+
+      <style>
+          /*the container must be positioned relative:*/
+            .custom-select {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            }
+
+            .custom-select select {
+            display: none; /*hide original SELECT element:*/
+            }
+
+            .select-selected {
+            background-color: rgb(248, 120, 97);
+            }
+
+            /*style the arrow inside the select element:*/
+            .select-selected:after {
+            position: absolute;
+            content: "";
+            top: 14px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-color: #fff transparent transparent transparent;
+            }
+
+            /*point the arrow upwards when the select box is open (active):*/
+            .select-selected.select-arrow-active:after {
+            border-color: transparent transparent #fff transparent;
+            top: 7px;
+            }
+
+            /*style the items (options), including the selected item:*/
+            .select-items div,.select-selected {
+            color: #ffffff;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+            cursor: pointer;
+            user-select: none;
+            }
+
+            /*style items (options):*/
+            .select-items {
+            position: absolute;
+            background-color: rgb(248, 120, 97);
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            }
+
+            /*hide the items when the select box is closed:*/
+            .select-hide {
+            display: none;
+            }
+
+            .select-items div:hover, .same-as-selected {
+            background-color: rgba(0, 0, 0, 0.1);
+            }
+      </style>
+      
+
+</head>
+<body>
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="/" class="navbar-brand">CoviFeed</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-nav-first">
+                         <li><a href="#home" class="smoothScroll">Home</a></li>
+                         <li><a href="#about" class="smoothScroll">About Us</a></li>
+                         <li><a href="#packages" class="smoothScroll">Packages</a></li>
+                         <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                         <li><a href="/cart">Cart</a></li>
+                         <li id="signedIn" ></li>
+                         <li id="test"></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+     
+
+     <!-- PACKAGE1 -->
+    
+     <section id="about" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-12 productcont">
+                         <div class="p1 product product1" id=" 1">
+                              <hr style="border: 1px solid #f0e4e4 ; width: 200%;">
+                              <br><br>
+                              <h4 class="productname">Package Name: 1-Day Meal Package</h4>
+                              <h4 class="price">Price: <span>&#8377;</span>250</h4>
+                              <br><br>
+                    
+                              
+                              <h2>Select your Location</h2>
+                              <div class="custom-select" style="width:200px;">
+                                <select>
+                                  <option value="0">Location:</option>
+                                  <option value="1">Audi</option>
+                                  <option value="2">BMW</option>
+                                  <option value="3">Citroen</option>
+                                  <option value="4">Ford</option>
+                                  <option value="5">Honda</option>
+                                  <option value="6">Jaguar</option>
+                                  <option value="7">Land Rover</option>
+                                  <option value="8">Mercedes</option>
+                                  <option value="9">Mini</option>
+                                  <option value="10">Nissan</option>
+                                  <option value="11">Toyota</option>
+                                  <option value="12">Volvo</option>
+                                </select>
+                              </div>
+                                
+                              <br><br>    
+                         </div>
+                    </div>
+
+                
+               </div>
+               <div class="row" style="margin-left: 1px;">
+                    <a href="/payment"><button  class="button button1 addtocart" type="submit" style="width: 250px;" onclick="pay()">CHECKOUT</button></a>
+                    <div id="snackbar">Your order has been confirmed</div>
+               </div>
+          </div>
+     </section>
+      
+
+     <!-- FOOTER -->
+     <footer id="footer" data-stellar-background-ratio="0.5">
+		
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-3 col-sm-8">
+                       <div class="footer-info" id="f1">
+                            <div class="section-title">
+                                 <h2 class="wow fadeInUp" data-wow-delay="0.2s">Contact us</h2>
+                            </div>
+                            <address class="wow fadeInUp" data-wow-delay="0.4s">
+                              <p>+91 6755904831</p>
+                              <p><a href="mailto:covidfeed.telangana@gmail.com">covidfeed.telangana@gmail.com</a></p>
+                         </address>
+                       </div>
+                  </div>
+
+                  <div class="col-md-3 col-sm-8">
+                       <div class="footer-info" id="f2">
+                            <div class="section-title">
+                                 <h2 class="wow fadeInUp" data-wow-delay="0.2s">Support the Cause </h2>
+                            </div>
+                            <address class="wow fadeInUp" data-wow-delay="0.4s">
+                                 <p>Your donation will help fund another soul in need.</p>
+                                 <p>You can donate to : <a href="https://www.pmcares.gov.in/en/">PMCares</a></p>
+                                 
+                            </address>
+                       </div>
+                  </div>
+                  
+             </div>
+             <br><br>
+
+             <div class="col-md-2 col-sm-4" id = "f3" style="text-align: center;">
+              <ul class="wow fadeInUp social-icon" data-wow-delay="0.4s" >
+                   <li><a href="https://www.facebook.com/" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                   <li><a href="https://twitter.com/login" class="fa fa-twitter"></a></li>
+                   <li><a href="https://www.instagram.com/" class="fa fa-instagram"></a></li>
+                   <li><a href="https://www.google.com" class="fa fa-google"></a></li>
+              </ul>
+
+              <div class="wow fadeInUp copyright-text" data-wow-delay="0.8s"> 
+                   <p>Copyright @CoviFeed <br>2021 </p>
+              </div>
+         </div> 
+        </div>
+   </footer>
+
+
+   <!-- SCRIPTS -->
+
+   <script>
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /*look for any elements with the class "custom-select":*/
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      ll = selElmnt.length;
+      /*for each element, create a new DIV that will act as the selected item:*/
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+      /*for each element, create a new DIV that will contain the option list:*/
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 1; j < ll; j++) {
+        /*for each option in the original select element,
+        create a new DIV that will act as an option item:*/
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function(e) {
+            /*when an item is clicked, update the original select box,
+            and the selected item:*/
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+              if (s.options[i].innerHTML == this.innerHTML) {
+                s.selectedIndex = i;
+                h.innerHTML = this.innerHTML;
+                y = this.parentNode.getElementsByClassName("same-as-selected");
+                yl = y.length;
+                for (k = 0; k < yl; k++) {
+                  y[k].removeAttribute("class");
+                }
+                this.setAttribute("class", "same-as-selected");
+                break;
+              }
+            }
+            h.click();
+        });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+      a.addEventListener("click", function(e) {
+          /*when the select box is clicked, close any other select boxes,
+          and open/close the current select box:*/
+          e.stopPropagation();
+          closeAllSelect(this);
+          this.nextSibling.classList.toggle("select-hide");
+          this.classList.toggle("select-arrow-active");
+        });
+    }
+    function closeAllSelect(elmnt) {
+      /*a function that will close all select boxes in the document,
+      except the current select box:*/
+      var x, y, i, xl, yl, arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i)
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+    /*if the user clicks anywhere outside the select box,
+    then close all select boxes:*/
+    document.addEventListener("click", closeAllSelect);
+    </script>
+
+   <script src="js/jquery.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/jquery.stellar.min.js"></script>
+   <script src="js/wow.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
+   <script src="js/jquery.magnific-popup.min.js"></script>
+   <script src="js/smoothscroll.js"></script>
+   <script src="js/custom.js"></script>
+   <script src="js/site.js"></script>
+   
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
